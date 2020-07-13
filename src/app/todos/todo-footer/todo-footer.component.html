@@ -1,0 +1,18 @@
+<!-- This footer should hidden by default and shown when there are todos -->
+
+<footer class="footer">
+    <!-- This should be `0 items left` by default -->
+    <span class="todo-count"><strong> {{ pendents }} </strong> feines pendents</span>
+    <!-- Remove this if you don't implement routing -->
+    <ul class="filters">
+
+
+        <li *ngFor="let filtre of filtres" (click)="canviarFiltre( filtre )">
+            <!-- class="selected" -->
+            <a href="#/" [class.selected]='filtre === filtreActual'> {{filtre | titlecase }} </a>
+        </li>
+
+    </ul>
+    <!-- Hidden if no completed items are left ↓ -->
+    <button class="clear-completed" (click)="netejarCompletats()">Netejar completatades</button>
+</footer>
